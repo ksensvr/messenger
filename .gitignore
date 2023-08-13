@@ -1,0 +1,7 @@
+id_rsa
+.env
+docker-compose.local.yml
+.idea
+Thumbs.db
+.DS_Store
+chat-server.md
