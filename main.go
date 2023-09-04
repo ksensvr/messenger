@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	_, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
 	cfg, err := config.InitConfig()
@@ -17,10 +17,12 @@ func main() {
 		panic(errors.Wrap(err, "init config error"))
 	}
 
-	postgresRepository, err := repository.NewPostgresRepository(cfg.Postgres)
+	connection, err := config.Connection(ctx, cfg.Postgres)
 	if err != nil {
-		panic(errors.Wrap(err, "init postgres repo error"))
+		panic(errors.Wrap(err, "init connections error"))
 	}
+
+	postgresRepository := repository.NewPostgresRepository(connection)
 
 	fmt.Print(postgresRepository)
 }

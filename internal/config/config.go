@@ -4,11 +4,10 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/pkg/errors"
-	"messenger/internal/infr/database"
 )
 
 type Config struct {
-	Postgres database.PostgresConfig `envconfig:"MERMAN_DATABASE" required:"true" vault:"postgres/"`
+	Postgres PostgresConfig `envconfig:"DATABASE" required:"true"`
 }
 
 func InitConfig() (Config, error) {

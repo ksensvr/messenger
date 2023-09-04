@@ -5,13 +5,4 @@ type User struct {
 	Name string
 }
 
-type DbUser struct {
-	Id       int
-	Uuid     string
-	Name     string
-	Password string
-}
-
 type Users []User
-
-type DbUsers []DbUser
