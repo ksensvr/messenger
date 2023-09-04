@@ -3,7 +3,7 @@ package models
 import "github.com/oklog/ulid"
 
 type User struct {
-	Uuid ulid.ULID
+	Id   ulid.ULID
 	Name string
 }
 

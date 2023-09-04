@@ -2,6 +2,7 @@ package repository
 
 import (
 	"github.com/jackc/pgx/v4/pgxpool"
+	"github.com/oklog/ulid"
 	"messenger/internal/models"
 )
 
@@ -14,8 +15,7 @@ func NewPostgresRepository(db *pgxpool.Pool) *Repository {
 }
 
 type DbUser struct {
-	Id       int
-	Uuid     string
+	Id       ulid.ULID
 	Name     string
 	Password string
 }
