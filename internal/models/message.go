@@ -1,8 +1,9 @@
 package models
 
+import "github.com/oklog/ulid"
+
 type Message struct {
-	Id        int
-	Uuid      string
+	Id        ulid.ULID
 	ChannelId int
 	SenderId  int
 	Message   string

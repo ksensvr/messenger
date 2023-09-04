@@ -1,8 +1,9 @@
 package models
 
+import "github.com/oklog/ulid"
+
 type Attachment struct {
-	Id        int
-	Uuid      string
+	Id        ulid.ULID
 	MessageId int
 	FileUrl   string
 }

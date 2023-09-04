@@ -1,8 +1,9 @@
 package models
 
+import "github.com/oklog/ulid"
+
 type Channel struct {
-	Id        int
-	Uuid      string
+	Id        ulid.ULID
 	Name      string
 	CreatorId int
 }

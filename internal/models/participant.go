@@ -1,8 +1,9 @@
 package models
 
+import "github.com/oklog/ulid"
+
 type Participant struct {
-	Id        int
-	Uuid      string
+	Id        ulid.ULID
 	ChannelId int
 	UserId    int
 	CanWrite  bool
